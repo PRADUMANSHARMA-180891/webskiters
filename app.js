@@ -64,11 +64,14 @@ app.use(
   ensureAdmin,
   require('./routes/admin.route')
 );
+app.use('/g',require('./routes/index.route'))
+app.use('/p',require('./routes/index.route'))
 
 // 404 Handler
 app.use((req, res, next) => {
   next(createHttpError.NotFound());
 });
+
 
 // Error Handler
 app.use((error, req, res, next) => {
@@ -77,9 +80,8 @@ app.use((error, req, res, next) => {
   res.render('error_40x', { error });
 });
 
-app.use('/gal',require('./routes/gallery'))
-app.use('/g',require('./routes/gallery'))
-app.use('/p',require('./routes/gallery'))
+// app.use('/gal',require('./routes/gallery'))
+
 
 // Setting the PORT
 const PORT = process.env.PORT || 3000;

@@ -13,9 +13,9 @@ router.get('/galleries/profile', async (req, res) => {
   }
 });
 
-router.get('/galleries/new', (req, res) => {
-  res.render('index');
-});
+// router.get('/galleries/new', (req, res) => {
+//   res.render('index');
+// });
 
 router.post('/galleries/post', async (req, res) => {
   try {
